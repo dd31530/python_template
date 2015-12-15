@@ -92,6 +92,7 @@ TIMESTAMP=True
 
 if  __name__ == '__main__':
    header()
+   print "\nAutotest: header() (above)"
    banner("Autotest: banner()") 
    message("Autotest: message()")
    if DEBUG:
@@ -99,6 +100,7 @@ if  __name__ == '__main__':
    else:
       message("DEBUG is %s" % DEBUG)
    message("TIMESTAMP is %s" % TIMESTAMP)
+   print "\nAutotest: footer() (below)"
    footer()
 
 
