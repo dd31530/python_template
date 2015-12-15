@@ -36,21 +36,29 @@ from messagesUtils import header, banner, footer, message
 
 
 class startChrono:
-   '''provide chronograph functionalities'''
+   '''
+   provide chronograph functionalities
+   '''
    def __init__(self):
-      '''start chronograph'''
+      '''
+      start chronograph
+      '''
       self._start = t.time()
       self._ref = self._start
 
    def partial(self):
-      '''returns partial elapsed time'''
+      '''
+      returns partial elapsed time
+      '''
       self._partial = t.time()
       partial = self._partial - self._ref
       self._ref = self._partial
       return "partial elapsed time: %.2f s" % partial
 
    def stop(self):
-      '''returns total elapsed time'''
+      '''
+      returns total elapsed time
+      '''
       total = t.time() - self._start
       return "total elapsed time: %.2f s" % total
 
