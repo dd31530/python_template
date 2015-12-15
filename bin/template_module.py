@@ -18,6 +18,8 @@ VERSION = 'v1.0_151215'
 ##############################################################################
 
 
+
+
 ##############################################################################
 # local modules
 ##############################################################################
@@ -32,30 +34,34 @@ from pathUtils import *
 ##############################################################################
 
 
+class template_class():
+   pass
+
+
 ##############################################################################
 # functions 
 ##############################################################################
 
 
-def func1():
+def template_function():
    files=('fic1', 'fic2', 'fic3', 'fic4')
    message("Entre dans la fonction...")
    try:
       with open(files[0]) as f:
-         message("%s exists..." % files[0], 'debug')
+         message("'%s' exists..." % files[0], 'debug')
    except IOError:
-      message("%s doesn't exist..." % files[0], 'error')
+      message("'%s' doesn't exist..." % files[0], 'error')
       for i in range(1,4):
          try:
             with open(files[i]) as f:
-                message("%s exists..." % files[i], 'debug')
+                message("'%s' exists..." % files[i], 'debug')
          except IOError:
-            message("%s doesn't exist..." % files[i], 'error')
+            message("'%s' doesn't exist..." % files[i], 'error')
    
 
 def main():
    message("Bonjour!")
-   func1()
+   template_function()
    message("Au revoir!")
 
 
@@ -67,7 +73,7 @@ def main():
 if __name__ == '__main__':
    header()
    banner("Execution...")
-   message("encore rien a debugger!...", 'debug')
+   message("ici, encore rien a debugger!...", 'debug')
    status=main()
    footer(status)
 
