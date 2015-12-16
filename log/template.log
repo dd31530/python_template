@@ -1,2 +1,2 @@
-2015-12-16 17:12:47,428 :: DEBUG :: logUtils.py :: <module> :: TEST
-2015-12-16 17:12:47,429 :: DEBUG :: logUtils.py :: <module> :: logfile: /home/daniel/pydev/template_project/log/template.log
+2015-12-16 19:22:28,717 :: DEBUG :: logUtils.py :: <module> :: autotest:
+2015-12-16 19:22:28,717 :: DEBUG :: logUtils.py :: <module> :: logfile: /home/daniel/sandbox/Python/template_project/log/template.log
