@@ -27,7 +27,7 @@ import time as t
 ##############################################################################
 
 
-from messagesUtils import header, banner, footer, message
+from messagesUtils import header, banner, footer
 
 
 ##############################################################################
@@ -74,12 +74,12 @@ if  __name__ == '__main__':
    banner('Autotest...')
    test_chronometre = startChrono()
    t.sleep(1)
-   message(test_chronometre.partial())
+   print(test_chronometre.partial())
    t.sleep(1)
-   message(test_chronometre.partial())
+   print(test_chronometre.partial())
    t.sleep(1)
-   message(test_chronometre.partial())
-   message(test_chronometre.stop())
+   print(test_chronometre.partial())
+   print(test_chronometre.stop())
    footer()
 
 

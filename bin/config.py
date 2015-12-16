@@ -3,15 +3,15 @@
 
 '''
 +----------------------------------------------------------------------------+
-| template_module:  a module skeleton                                        |
+| config:  the project configuration module                                  |
 +---------+----------+----------+--------------------------------------------+
 | version | datecode | author   | history                                    |
 +---------+----------+----------+--------------------------------------------+
-| 1.0     | 151215   | DD       | creation                                   |
+| 1.0     | 151216   | DD       | creation                                   |
 +---------+----------+----------+--------------------------------------------+
 '''
 
-VERSION = 'v1.0_151215'
+VERSION = 'v1.0_151216'
 
 ##############################################################################
 # external modules
@@ -26,7 +26,6 @@ from ConfigParser import ConfigParser
 ##############################################################################
 
 
-from logUtils import logging
 from messagesUtils import header, banner, footer
 from pathUtils import currentPath
 
@@ -36,8 +35,6 @@ from pathUtils import currentPath
 ##############################################################################
 
 
-class template_class():
-   pass
 
 
 ##############################################################################
@@ -45,27 +42,11 @@ class template_class():
 ##############################################################################
 
 
-def template_function():
-   files=('fic1', 'fic2', 'fic3', 'fic4')
-   logger.info('Entre dans la fonction...')
-   try:
-      with open(files[0]) as f:
-         logger.debug("'%s' exists...", files[0])
-   except IOError:
-      logger.error("'%s' doesn't exist...", files[0])
-      for i in range(1,4):
-         try:
-            with open(files[i]) as f:
-                logger.debug("'%s' exists...", files[i])
-         except IOError:
-            logger.error("'%s' doesn't exist...", files[i])
-   
-
-def main():
-   logger = logging.getLogger(__name__)
-   logger.info("Bonjour!")
-   template_function()
-   logger.info("Au revoir!")
+def read():
+   CFG = ConfigParser()
+   cwd = currentPath()
+   CFG.read(cwd.cfg('default.conf'))
+   return CFG
 
 
 ##############################################################################
@@ -75,9 +56,10 @@ def main():
 
 if __name__ == '__main__':
    header()
-   banner("Execution...")
-   status=main()
-   footer(status)
+   banner("Extract log file name from conf file...")
+   test = read()
+   print("log file: %s" % test.get('log', 'LOG_FILE'))
+   footer()
 
 
 ##############################################################################

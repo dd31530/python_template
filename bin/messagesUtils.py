@@ -29,7 +29,6 @@ import datetime
 ##############################################################################
 
 
-import settings
 
 
 ##############################################################################
@@ -63,55 +62,16 @@ def footer(code=0):
    sys.exit(code)
 
 
-def whosdaddy():
-   '''
-   return parent function name
-   '''
-   return inspect.stack()[3][3]
-
-
-def whoami():
-   '''
-   return current function name
-   '''
-   whoami=whosdaddy()
-   if whoami=='<module>': whoami='module'
-   return whoami
-
-
-def message(mess, severity='info '):
-   '''
-   print a formated message: "[severity] function name> mess"
-      default severity value is 'info'
-      for 'debug' severity, message will be display only if DEBUG=True
-   '''
-   if severity=='debug' and not DEBUG: return
-   if TIMESTAMP:
-     ts=datetime.datetime.strftime(datetime.datetime.now(), '%y-%m-%d %H:%M:%S ')
-   else:
-     ts=''
-   print "%s[%s] %s> %s" % (ts, severity, whoami(), mess)
-
-
 ##############################################################################
 # main
 ##############################################################################
 
 
-DEBUG=settings.DEBUG
-TIMESTAMP=settings.TIMESTAMP
-
 if  __name__ == '__main__':
    header()
-   print "\nAutotest: header() (above)"
+   print("\nAutotest: header() ( ^^^^ above ^^^^ )")
    banner("Autotest: banner()") 
-   message("Autotest: message()")
-   if DEBUG:
-      message("DEBUG is %s" % DEBUG, "debug")
-   else:
-      message("DEBUG is %s" % DEBUG)
-   message("TIMESTAMP is %s" % TIMESTAMP)
-   print "\nAutotest: footer() (below)"
+   print("\nAutotest: footer() ( vvvv below vvvv )")
    footer()
 
 

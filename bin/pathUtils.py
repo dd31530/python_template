@@ -29,7 +29,7 @@ import sys
 # local modules
 ##############################################################################
 
-from messagesUtils import header, banner, footer, message
+from messagesUtils import header, banner, footer
 
 ##############################################################################
 # classes
@@ -43,6 +43,7 @@ class currentPath:
       self._inp = self._bin.replace('bin', 'input')
       self._out = self._bin.replace('bin', 'output')
       self._tmp = self._bin.replace('bin', 'tmp')
+      self._log = self._bin.replace('bin', 'log')
 
    def bin(self, *args):
       '''returns current project 'bin' absolute path.'''
@@ -63,6 +64,10 @@ class currentPath:
    def tmp(self, *args):
       '''returns current project 'tmp' absolute path.'''
       return os.path.join(self._tmp, *args)
+      
+   def log(self, *args):
+      '''returns current project 'log' absolute path.'''
+      return os.path.join(self._log, *args)
       
    def isFile(self, filepath):
       '''returns true if file exists.'''
@@ -89,16 +94,16 @@ if  __name__ == '__main__':
    cwd = currentPath()
    config_file = cwd.cfg('default.cfg')
    if cwd.isFile(config_file):
-      message("le fichier %s existe!" % config_file)
+      print("le fichier %s existe!" % config_file)
    else:
-      message("le fichier %s n'existe pas!" % config_file, "error")
+      print("le fichier %s n'existe pas!" % config_file)
    if cwd.isDir(cwd.inp()):
-      message("le repertoire %s existe!" % cwd.inp())
+      print("le repertoire %s existe!" % cwd.inp())
    else:
-      message("le repertoire %s n'existe pas!" % cwd.inp(), "error")
+      print("le repertoire %s n'existe pas!" % cwd.inp())
    output_file = cwd.out('result')
    if not cwd.isFile(output_file):
-      message("le fichier %s n'existe pas!" % output_file, "error")
+      print("le fichier %s n'existe pas!" % output_file)
    footer()
 
 
