@@ -7,20 +7,18 @@
 +---------+----------+----------+--------------------------------------------+
 | version | datecode | author   | history                                    |
 +---------+----------+----------+--------------------------------------------+
-| 1.0     | 151216   | DD       | creation                                   |
+| 1.0     | 151217   | DD       | creation                                   |
 +---------+----------+----------+--------------------------------------------+
 '''
 
-VERSION = 'v1.0_151216'
+VERSION = 'v1.0_151217'
 
 ##############################################################################
 # external modules
 ##############################################################################
 
 
-import logging
-from logging.handlers import RotatingFileHandler
-import sys
+import logging.config
 
 
 ##############################################################################
@@ -28,23 +26,36 @@ import sys
 ##############################################################################
 
 
-import config
 from messagesUtils import header, banner, footer
-from pathUtils import currentPath as cwd
+from pathUtils import currentPath
  
-
-##############################################################################
-# classes 
-##############################################################################
-
-
-
 
 ##############################################################################
 # functions 
 ##############################################################################
 
 
+def singleton(cls):
+   instances = {}
+   def get_instance():
+      if cls not in instances:
+         instances[cls] = cls()
+      return instances[cls]
+   return get_instance()
+
+
+##############################################################################
+# classes 
+##############################################################################
+
+
+@singleton
+class Logger():
+   def __init__(self):
+      cwd = currentPath()
+      config = cwd.cfg('log.conf')
+      logging.config.fileConfig(config)
+      self.logr = logging.getLogger('root')
 
 
 ##############################################################################
@@ -52,38 +63,14 @@ from pathUtils import currentPath as cwd
 ##############################################################################
 
 
-CONFIG = config.read()
-
-logfile = cwd().log(CONFIG.get('log', 'LOG_FILE'))
-maxsize = CONFIG.get('log', 'MAX_SIZE')
-rot = CONFIG.get('log', 'ROT_NUMBER')
-loglev = CONFIG.get('log', 'LOGFILE_LVL', raw=True)
-logfmt = CONFIG.get('log', 'LOGFILE_FMT', raw=True)
-conlev = CONFIG.get('log', 'CONSOLE_LVL', raw=True)
-confmt = CONFIG.get('log', 'CONSOLE_FMT', raw=True)
-
-logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
-
-file_formatter = logging.Formatter(logfmt)
-file_handler = RotatingFileHandler(logfile, 'a', maxsize, rot)
-file_handler.setLevel(logging.DEBUG)
-#file_handler.setLevel(loglev)
-file_handler.setFormatter(file_formatter)
-logger.addHandler(file_handler)
-
-console_formatter = logging.Formatter(confmt)
-console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.DEBUG)
-#console_handler.setLevel(conlev)
-console_handler.setFormatter(console_formatter)
-logger.addHandler(console_handler)
-
 if __name__ == '__main__':
    header()
    banner('Autotest...')
-   logger.debug('autotest:')
-   logger.debug('logfile: %s', logfile)
+   Logger.logr.debug('this is an autotest for debug message')
+   Logger.logr.info('this is an autotest for info message')
+   Logger.logr.warning('this is an autotest for warning message')
+   Logger.logr.error('this is an autotest for error message')
+   Logger.logr.critical('this is an autotest for critical message')
    footer()
 
 

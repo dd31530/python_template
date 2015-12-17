@@ -1,4 +1,5 @@
-2015-12-16 23:33:06,573 :: DEBUG :: logUtils.py :: <module> :: autotest:
-2015-12-16 23:33:06,573 :: DEBUG :: logUtils.py :: <module> :: logfile: /home/daniel/sandbox/Python/template_project/log/template.log
-2015-12-16 23:41:06,374 :: DEBUG :: logUtils.py :: <module> :: autotest:
-2015-12-16 23:41:06,374 :: DEBUG :: logUtils.py :: <module> :: logfile: /home/daniel/sandbox/Python/template_project/log/template.log
+2015-12-17 15:12:24,664 :: DEBUG :: logUtils :: <module> :: this is an autotest for debug message
+2015-12-17 15:12:24,664 :: INFO :: logUtils :: <module> :: this is an autotest for info message
+2015-12-17 15:12:24,664 :: WARNING :: logUtils :: <module> :: this is an autotest for warning message
+2015-12-17 15:12:24,664 :: ERROR :: logUtils :: <module> :: this is an autotest for error message
+2015-12-17 15:12:24,665 :: CRITICAL :: logUtils :: <module> :: this is an autotest for critical message
