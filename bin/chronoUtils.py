@@ -70,16 +70,17 @@ class startChrono:
 
 if  __name__ == '__main__':
 
+   from logUtils import Logger
    header()
    banner('Autotest...')
    test_chronometre = startChrono()
    t.sleep(1)
-   print(test_chronometre.partial())
+   Logger.logr.info(test_chronometre.partial())
    t.sleep(1)
-   print(test_chronometre.partial())
+   Logger.logr.info(test_chronometre.partial())
    t.sleep(1)
-   print(test_chronometre.partial())
-   print(test_chronometre.stop())
+   Logger.logr.info(test_chronometre.partial())
+   Logger.logr.info(test_chronometre.stop())
    footer()
 
 

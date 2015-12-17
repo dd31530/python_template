@@ -92,21 +92,22 @@ class currentPath:
 ##############################################################################
 
 if  __name__ == '__main__':
+   from logUtils import Logger
    header()
    banner("Autotest...")
    cwd = currentPath()
-   config_file = cwd.cfg('default.cfg')
+   config_file = cwd.cfg('log.conf')
    if cwd.isFile(config_file):
-      print("le fichier %s existe!" % config_file)
+      Logger.logr.info("le fichier %s existe!" % config_file)
    else:
-      print("le fichier %s n'existe pas!" % config_file)
+      Logger.logr.warning("le fichier %s n'existe pas!" % config_file)
    if cwd.isDir(cwd.inp()):
-      print("le repertoire %s existe!" % cwd.inp())
+      Logger.logr.info("le repertoire %s existe!" % cwd.inp())
    else:
-      print("le repertoire %s n'existe pas!" % cwd.inp())
+      Logger.logr.warning("le repertoire %s n'existe pas!" % cwd.inp())
    output_file = cwd.out('result')
    if not cwd.isFile(output_file):
-      print("le fichier %s n'existe pas!" % output_file)
+      Logger.logr.warning("le fichier %s n'existe pas!" % output_file)
    footer()
 
 

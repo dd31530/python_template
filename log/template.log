@@ -1,21 +1,19 @@
-2015-12-17 15:12:24,664 :: DEBUG :: logUtils :: <module> :: this is an autotest for debug message
-2015-12-17 15:12:24,664 :: INFO :: logUtils :: <module> :: this is an autotest for info message
-2015-12-17 15:12:24,664 :: WARNING :: logUtils :: <module> :: this is an autotest for warning message
-2015-12-17 15:12:24,664 :: ERROR :: logUtils :: <module> :: this is an autotest for error message
-2015-12-17 15:12:24,665 :: CRITICAL :: logUtils :: <module> :: this is an autotest for critical message
-2015-12-17 15:52:16,412 :: INFO :: chronoUtils :: <module> :: partial elapsed time: 1.00 s
-2015-12-17 15:52:17,413 :: INFO :: chronoUtils :: <module> :: partial elapsed time: 1.00 s
-2015-12-17 15:52:18,415 :: INFO :: chronoUtils :: <module> :: partial elapsed time: 1.00 s
-2015-12-17 15:52:18,415 :: INFO :: chronoUtils :: <module> :: total elapsed time: 3.00 s
-2015-12-17 16:30:21,842 :: DEBUG :: logUtils :: <module> :: this is an autotest for debug message
-2015-12-17 16:30:21,854 :: INFO :: logUtils :: <module> :: this is an autotest for info message
-2015-12-17 16:30:21,854 :: WARNING :: logUtils :: <module> :: this is an autotest for warning message
-2015-12-17 16:30:21,854 :: ERROR :: logUtils :: <module> :: this is an autotest for error message
-2015-12-17 16:30:21,854 :: CRITICAL :: logUtils :: <module> :: this is an autotest for critical message
-2015-12-17 16:31:20,885 :: INFO :: template_module :: main :: Bonjour!
-2015-12-17 16:31:20,885 :: INFO :: template_module :: template_function :: Entre dans la fonction...
-2015-12-17 16:31:20,885 :: ERROR :: template_module :: template_function :: 'fic1' doesn't exist...
-2015-12-17 16:31:20,885 :: ERROR :: template_module :: template_function :: 'fic2' doesn't exist...
-2015-12-17 16:31:20,885 :: ERROR :: template_module :: template_function :: 'fic3' doesn't exist...
-2015-12-17 16:31:20,886 :: ERROR :: template_module :: template_function :: 'fic4' doesn't exist...
-2015-12-17 16:31:20,886 :: INFO :: template_module :: main :: Au revoir!
+2015-12-17 23:09:37,017 :: INFO :: template_module :: main :: Bonjour!
+2015-12-17 23:09:37,017 :: INFO :: template_module :: template_function :: Entre dans la fonction...
+2015-12-17 23:09:37,017 :: ERROR :: template_module :: template_function :: 'fic1' doesn't exist...
+2015-12-17 23:09:37,017 :: ERROR :: template_module :: template_function :: 'fic2' doesn't exist...
+2015-12-17 23:09:37,017 :: ERROR :: template_module :: template_function :: 'fic3' doesn't exist...
+2015-12-17 23:09:37,017 :: ERROR :: template_module :: template_function :: 'fic4' doesn't exist...
+2015-12-17 23:09:37,017 :: INFO :: template_module :: main :: Au revoir!
+2015-12-17 23:14:46,122 :: INFO :: chronoUtils :: <module> :: partial elapsed time: 1.00 s
+2015-12-17 23:14:47,124 :: INFO :: chronoUtils :: <module> :: partial elapsed time: 1.00 s
+2015-12-17 23:14:48,125 :: INFO :: chronoUtils :: <module> :: partial elapsed time: 1.00 s
+2015-12-17 23:14:48,125 :: INFO :: chronoUtils :: <module> :: total elapsed time: 3.00 s
+2015-12-17 23:17:08,019 :: INFO :: messagesUtils :: <module> :: Autotest: header() ( ^^^^ above ^^^^ )
+2015-12-17 23:17:08,019 :: INFO :: messagesUtils :: <module> :: Autotest: footer() ( vvvv below vvvv )
+2015-12-17 23:19:47,903 :: WARNING :: pathUtils :: <module> :: le fichier /home/daniel/sandbox/Python/template_project/cfg/default.cfg n'existe pas!
+2015-12-17 23:19:47,903 :: WARNING :: pathUtils :: <module> :: le repertoire /home/daniel/sandbox/Python/template_project/input n'existe pas!
+2015-12-17 23:19:47,903 :: WARNING :: pathUtils :: <module> :: le fichier /home/daniel/sandbox/Python/template_project/output/result n'existe pas!
+2015-12-17 23:21:37,010 :: INFO :: pathUtils :: <module> :: le fichier /home/daniel/sandbox/Python/template_project/cfg/log.conf existe!
+2015-12-17 23:21:37,010 :: INFO :: pathUtils :: <module> :: le repertoire /home/daniel/sandbox/Python/template_project/input existe!
+2015-12-17 23:21:37,010 :: WARNING :: pathUtils :: <module> :: le fichier /home/daniel/sandbox/Python/template_project/output/result n'existe pas!

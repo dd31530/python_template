@@ -68,10 +68,11 @@ def footer(code=0):
 
 
 if  __name__ == '__main__':
+   from logUtils import Logger
    header()
-   print("\nAutotest: header() ( ^^^^ above ^^^^ )")
+   Logger.logr.info("Autotest: header() ( ^^^^ above ^^^^ )")
    banner("Autotest: banner()") 
-   print("Autotest: footer() ( vvvv below vvvv )")
+   Logger.logr.info("Autotest: footer() ( vvvv below vvvv )")
    footer()
 
 
