@@ -26,7 +26,7 @@ from ConfigParser import ConfigParser
 ##############################################################################
 
 
-from logUtils import logging
+from logUtils import Logger
 from messagesUtils import header, banner, footer
 from pathUtils import currentPath
 
@@ -47,25 +47,24 @@ class template_class():
 
 def template_function():
    files=('fic1', 'fic2', 'fic3', 'fic4')
-   logger.info('Entre dans la fonction...')
+   Logger.logr.info('Entre dans la fonction...')
    try:
       with open(files[0]) as f:
-         logger.debug("'%s' exists...", files[0])
+         Logger.logr.debug("'%s' exists...", files[0])
    except IOError:
-      logger.error("'%s' doesn't exist...", files[0])
+      Logger.logr.error("'%s' doesn't exist...", files[0])
       for i in range(1,4):
          try:
             with open(files[i]) as f:
-                logger.debug("'%s' exists...", files[i])
+                Logger.logr.debug("'%s' exists...", files[i])
          except IOError:
-            logger.error("'%s' doesn't exist...", files[i])
+            Logger.logr.error("'%s' doesn't exist...", files[i])
    
 
 def main():
-   logger = logging.getLogger(__name__)
-   logger.info("Bonjour!")
+   Logger.logr.info("Bonjour!")
    template_function()
-   logger.info("Au revoir!")
+   Logger.logr.info("Au revoir!")
 
 
 ##############################################################################

@@ -71,7 +71,7 @@ if  __name__ == '__main__':
    header()
    print("\nAutotest: header() ( ^^^^ above ^^^^ )")
    banner("Autotest: banner()") 
-   print("\nAutotest: footer() ( vvvv below vvvv )")
+   print("Autotest: footer() ( vvvv below vvvv )")
    footer()
 
 
